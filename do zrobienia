@@ -6,3 +6,53 @@ W późniejszym czasie zamiast A - w lewo i D - w prawo, obrót w lewo lub w pra
 Kolizja z innymi obiektami 
 
 Pociski
+
+
+
+
+
+Prototyp klasy
+
+class Tank {
+	
+public:
+	sf::Keyboard::Key wkey, akey, skey, dkey;
+
+	void setWKey(sf::Keyboard::Key _wkey)
+	{
+		wkey = _wkey;
+	}
+	sf::Color color;
+	//sf::RenderWindow& window;
+	sf::RectangleShape square;
+	Tank(sf::Keyboard::Key _wkey/*, sf::Keyboard::Key _akey, sf::Keyboard::Key _skey, sf::Keyboard::Key _dkey, sf::Color _color*/ )
+	{
+		wkey = _wkey;
+		//akey = _akey;
+		//skey = _skey;
+		//dkey = _dkey;
+		//color = _color;
+		//sf::RenderWindow window(sf::VideoMode(800, 600), "Tanks");
+
+	};
+	
+	void update(sf::Keyboard::Key wkey , sf::Keyboard::Key akey, sf::Keyboard::Key skey, sf::Keyboard::Key dkey, sf::RenderWindow& window) {
+
+		if (sf::Keyboard::isKeyPressed(wkey) && square.getPosition().y > 0)
+		{
+			square.move(0.f, -5.f);
+		}
+		if (sf::Keyboard::isKeyPressed(akey) && square.getPosition().x > 0)
+		{
+			square.move(-5.f, 0.f);
+		}
+		if (sf::Keyboard::isKeyPressed(skey) && square.getPosition().y + square.getSize().y < window.getSize().y)
+		{
+			square.move(0.f, 5.f);
+		}
+		if (sf::Keyboard::isKeyPressed(dkey) && square.getPosition().x + square.getSize().x < window.getSize().x)
+		{
+			square.move(5.f, 0.f);
+		}
+	};
+};
