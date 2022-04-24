@@ -1,0 +1,8 @@
+klasa Tank do której konstruktora wpiszemy klawisze ruchu (np. W A S D) i przy okazji kolor lub kiedyś teksture jeżeli ją zrobimy
+  w klasie funkcja updateująca czołg odnosząc się do klawisza W - w górę, itd.
+
+W późniejszym czasie zamiast A - w lewo i D - w prawo, obrót w lewo lub w prawo
+
+Kolizja z innymi obiektami 
+
+Pociski
